@@ -4,14 +4,13 @@ import 'package:flutter/material.dart';
 
 class GlassButton extends StatelessWidget {
   final String text;
-  const GlassButton({required this.text, super.key});
+  void Function()? onTap;
+   GlassButton({required this.onTap ,required this.text, super.key});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        print('button pressed');
-      },
+      onTap: onTap,
       child: Stack(
         children: [
           // Add BackdropFilter for the glass effect
