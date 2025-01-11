@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ghana_police_hospital/utils/glass_button.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({super.key});
@@ -47,6 +48,7 @@ class IntroPage extends StatelessWidget {
               ),
 
               //Add a button
+              GlassButton(text: 'ENTER TO ACCESS SERVICES'),
             ],
           ),
         ),
