@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ghana_police_hospital/utils/glass_button.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -6,53 +7,159 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.brown[200],
-      appBar: AppBar(
-        backgroundColor: Colors.brown[400],
-        leading: IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.menu),
-        ),
-        title: Text('GHANA POLICE HOSPITAL'),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(25.0),
-        child: Column(
-          children: [
-            //search bar for user to search a service.
-            Container(
-              padding: EdgeInsets.all(
-                25,
-              ),
-              decoration: BoxDecoration(
-                color: Colors.brown[100],
-                border: Border.all(
-                  color: Colors.brown.withOpacity(0.8),
-                  width: 1.5,
-                ),
-                borderRadius: BorderRadius.circular(
-                  15,
-                ),
-              ),
-              child: Row(
+      backgroundColor: Colors.brown[100],
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(25.0),
+          child: Column(
+            children: [
+              //welcome user section
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    'Search a Service',
-                    style: TextStyle(
-                      fontSize: 20,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Hello,',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        'Edem Debrah',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 22,
+                          color: Colors.brown,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(12),
+                    decoration: BoxDecoration(
                       color: Colors.brown,
+                      borderRadius: BorderRadius.circular(
+                        8,
+                      ),
                     ),
-                  ),
-                  Icon(
-                    Icons.search,
-                    size: 32,
-                    color: Colors.brown,
-                  ),
+                    child: Icon(
+                      Icons.person,
+                      size: 24,
+                      color: Colors.white,
+                    ),
+                  )
                 ],
               ),
-            )
-          ],
+              SizedBox(
+                height: 25,
+              ),
+
+              //hospital card -> how can we help?
+              Container(
+                padding: EdgeInsets.all(25),
+                decoration: BoxDecoration(
+                  color: Colors.green[300],
+                  borderRadius: BorderRadius.circular(24),
+                ),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        height: 100,
+                        child: Image.asset('lib/images/patient.png'),
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'How do you feel?',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Text(
+                              'Fill out the medical form to get help now',
+                              style: TextStyle(
+                                fontSize: 18,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Container(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 40,
+                                vertical: 15,
+                              ),
+                              decoration: BoxDecoration(
+                                color: Colors.brown[600],
+                                borderRadius: BorderRadius.circular(
+                                  12,
+                                ),
+                              ),
+                              child: Text(
+                                'Get Started',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                    ]),
+              ),
+
+              SizedBox(
+                height: 25,
+              ),
+              //search bar for user to search a service.
+              Container(
+                padding: EdgeInsets.all(
+                  25,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.brown[200],
+                  border: Border.all(
+                    color: Colors.brown.withOpacity(0.8),
+                    width: 1.5,
+                  ),
+                  borderRadius: BorderRadius.circular(
+                    15,
+                  ),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Search a Service',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.brown,
+                      ),
+                    ),
+                    Icon(
+                      Icons.search,
+                      size: 32,
+                      color: Colors.brown,
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
