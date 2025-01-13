@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ghana_police_hospital/utils/glass_button.dart';
+import 'package:ghana_police_hospital/utils/services_list.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -11,7 +12,7 @@ class HomePage extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(25.0),
-          child: Column(
+          child: ListView(
             children: [
               //welcome user section
               Row(
@@ -157,7 +158,32 @@ class HomePage extends StatelessWidget {
                     ),
                   ],
                 ),
-              )
+              ),
+              SizedBox(
+                height: 25,
+              ),
+              Container(
+                height: 370,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    ServicesList(
+                      bgColor: Colors.red[200],
+                      headerImage: "lib/images/emergency.jpg",
+                      departmentName: 'EMERGENCY DEPARTMENT',
+                      departmentDescr: 'departmentDescr',
+                      onTap: () {},
+                    ),
+                    ServicesList(
+                      bgColor: Colors.amber[200],
+                      headerImage: "lib/images/emergency.jpg",
+                      departmentName: 'EMERGENCY DEPARTMENT',
+                      departmentDescr: 'departmentDescr',
+                      onTap: () {},
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
