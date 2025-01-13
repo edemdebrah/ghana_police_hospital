@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ghana_police_hospital/utils/glass_button.dart';
 
 class ServicesList extends StatelessWidget {
   Color? bgColor;
@@ -18,10 +19,11 @@ class ServicesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      alignment: Alignment.center,
       width: 240,
       margin: EdgeInsets.only(
         left: 20,
-        bottom: 50,
+        //bottom: 50,
       ),
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(
@@ -65,6 +67,7 @@ class ServicesList extends StatelessWidget {
               color: Colors.brown,
               fontWeight: FontWeight.bold,
             ),
+            textAlign: TextAlign.center,
           ),
           SizedBox(
             height: 10,
@@ -78,9 +81,28 @@ class ServicesList extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 25,
+            height: 10,
           ),
           //button to launch / open a department
+          Container(
+            padding: EdgeInsets.symmetric(
+              horizontal: 40,
+              vertical: 15,
+            ),
+            decoration: BoxDecoration(
+              color: Colors.brown[600],
+              borderRadius: BorderRadius.circular(
+                12,
+              ),
+            ),
+            child: Text(
+              'Get Started',
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.white,
+              ),
+            ),
+          )
         ],
       ),
     );

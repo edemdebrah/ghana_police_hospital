@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(25.0),
-          child: ListView(
+          child: Column(
             children: [
               //welcome user section
               Row(
@@ -98,6 +98,7 @@ class HomePage extends StatelessWidget {
                             SizedBox(
                               height: 20,
                             ),
+                            //button for How do you feel?
                             Container(
                               padding: EdgeInsets.symmetric(
                                 horizontal: 40,
@@ -129,7 +130,7 @@ class HomePage extends StatelessWidget {
               //search bar for user to search a service.
               Container(
                 padding: EdgeInsets.all(
-                  25,
+                  20,
                 ),
                 decoration: BoxDecoration(
                   color: Colors.brown[200],
@@ -162,14 +163,15 @@ class HomePage extends StatelessWidget {
               SizedBox(
                 height: 25,
               ),
-              Container(
-                height: 370,
+              Expanded(
+                //color: Colors.brown,
+                //height: 350,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
                     ServicesList(
                       bgColor: Colors.red[200],
-                      headerImage: "lib/images/emergency.jpg",
+                      headerImage: "lib/images/emergency2.jpg",
                       departmentName: 'EMERGENCY DEPARTMENT',
                       departmentDescr: 'departmentDescr',
                       onTap: () {},
@@ -177,7 +179,14 @@ class HomePage extends StatelessWidget {
                     ServicesList(
                       bgColor: Colors.amber[200],
                       headerImage: "lib/images/emergency.jpg",
-                      departmentName: 'EMERGENCY DEPARTMENT',
+                      departmentName: 'OUT-PATIENT DEPARTMENT',
+                      departmentDescr: 'departmentDescr',
+                      onTap: () {},
+                    ),
+                    ServicesList(
+                      bgColor: Colors.purple[200],
+                      headerImage: "lib/images/surgery2.jpeg",
+                      departmentName: 'SURGERY DEPARTMENT',
                       departmentDescr: 'departmentDescr',
                       onTap: () {},
                     ),
