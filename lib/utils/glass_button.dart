@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class GlassButton extends StatelessWidget {
   final String text;
   void Function()? onTap;
-   GlassButton({required this.onTap ,required this.text, super.key});
+  GlassButton({required this.onTap, required this.text, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class GlassButton extends StatelessWidget {
               filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
               child: Container(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
@@ -31,7 +31,7 @@ class GlassButton extends StatelessWidget {
                     end: Alignment.bottomRight,
                   ),
                   border: Border.all(
-                      color: Colors.white.withOpacity(0.3), width: 1.5),
+                      color: Colors.white.withOpacity(0.3), width: 2.5),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Text(

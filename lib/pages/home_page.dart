@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ghana_police_hospital/pages/services/emergency_department.dart';
 import 'package:ghana_police_hospital/utils/glass_button.dart';
 import 'package:ghana_police_hospital/utils/services_list.dart';
 
@@ -22,7 +23,7 @@ class HomePage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Hello,',
+                        'Welcome!,',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
@@ -51,7 +52,7 @@ class HomePage extends StatelessWidget {
                       size: 24,
                       color: Colors.white,
                     ),
-                  )
+                  ),
                 ],
               ),
               SizedBox(
@@ -129,8 +130,9 @@ class HomePage extends StatelessWidget {
               ),
               //search bar for user to search a service.
               Container(
-                padding: EdgeInsets.all(
-                  20,
+                padding: EdgeInsets.symmetric(
+                  vertical: 10,
+                  horizontal: 20,
                 ),
                 decoration: BoxDecoration(
                   color: Colors.brown[200],
@@ -139,7 +141,7 @@ class HomePage extends StatelessWidget {
                     width: 1.5,
                   ),
                   borderRadius: BorderRadius.circular(
-                    15,
+                    50,
                   ),
                 ),
                 child: Row(
@@ -173,21 +175,29 @@ class HomePage extends StatelessWidget {
                       bgColor: Colors.red[200],
                       headerImage: "lib/images/emergency2.jpg",
                       departmentName: 'EMERGENCY DEPARTMENT',
-                      departmentDescr: 'departmentDescr',
-                      onTap: () {},
+                      departmentDescr:
+                          'Patients with life threatening conditions',
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => EmergencyDepartment(),
+                          ),
+                        );
+                      },
                     ),
                     ServicesList(
                       bgColor: Colors.amber[200],
-                      headerImage: "lib/images/emergency.jpg",
+                      headerImage: "lib/images/opd.jpg",
                       departmentName: 'OUT-PATIENT DEPARTMENT',
-                      departmentDescr: 'departmentDescr',
+                      departmentDescr: 'Patients who dont need admission',
                       onTap: () {},
                     ),
                     ServicesList(
                       bgColor: Colors.purple[200],
                       headerImage: "lib/images/surgery2.jpeg",
                       departmentName: 'SURGERY DEPARTMENT',
-                      departmentDescr: 'departmentDescr',
+                      departmentDescr: 'Provide surgery services',
                       onTap: () {},
                     ),
                   ],

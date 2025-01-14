@@ -20,7 +20,7 @@ class ServicesList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      width: 240,
+      //width: 280,
       margin: EdgeInsets.only(
         left: 20,
         //bottom: 50,
@@ -51,7 +51,7 @@ class ServicesList extends StatelessWidget {
               ),
               child: Image.asset(
                 headerImage,
-                width: 200,
+                width: 280,
               ),
             ),
           ),
@@ -70,7 +70,7 @@ class ServicesList extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           SizedBox(
-            height: 10,
+            height: 5,
           ),
           //Description of Department
           Text(
@@ -79,27 +79,31 @@ class ServicesList extends StatelessWidget {
               fontSize: 14,
               color: Colors.brown,
             ),
+            textAlign: TextAlign.center,
           ),
           SizedBox(
             height: 10,
           ),
           //button to launch / open a department
-          Container(
-            padding: EdgeInsets.symmetric(
-              horizontal: 40,
-              vertical: 15,
-            ),
-            decoration: BoxDecoration(
-              color: Colors.brown[600],
-              borderRadius: BorderRadius.circular(
-                12,
+          GestureDetector(
+            onTap: onTap,
+            child: Container(
+              padding: EdgeInsets.symmetric(
+                horizontal: 40,
+                vertical: 15,
               ),
-            ),
-            child: Text(
-              'Get Started',
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.white,
+              decoration: BoxDecoration(
+                color: Colors.brown[600],
+                borderRadius: BorderRadius.circular(
+                  12,
+                ),
+              ),
+              child: Text(
+                'Get Started',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.white,
+                ),
               ),
             ),
           )
